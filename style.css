@@ -1,0 +1,109 @@
+/* Global CSS */
+
+:root {
+  --text-primary: #ffffff;
+  --text-secondary: #ececec;
+  --bg-primary: #1a0b2e;
+  --bg-secondary: #230e3d;
+  --gradient-color: linear-gradient(
+    47.64deg,
+    rgba(247, 233, 63, 1),
+    rgba(251, 9, 180, 1),
+    rgba(145, 0, 248, 1)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 16px;
+}
+
+.btn-primary {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: var(--gradient-color);
+  color: var(--text-primary);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--bg-primary);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 16px;
+}
+.navbar h2 {
+  font-size: 32px;
+  color: var(--text-primary);
+}
+.navbar h2 span {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links li a {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.hamburger-menu {
+  display: none;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Responsive Screens */
+@media screen and (max-width: 576px) {
+  .nav-links {
+    display: none;
+  }
+  .navbar .btn-primary {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+}
