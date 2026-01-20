@@ -217,6 +217,54 @@ header {
   opacity: 0.1;
 }
 
+/* Why Choose TechWave Styles */
+
+#why-us {
+  background-color: var(--bg-secondary);
+}
+
+.why-us-container {
+  text-align: center;
+}
+
+.why-us-container h2 {
+  margin-bottom: 32px;
+}
+.why-us-card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+}
+.why-us-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: start;
+  gap: 12px;
+  padding: 32px;
+  border-radius: 40px;
+  background-color: #35116566;
+}
+.why-us-card:nth-child(1) {
+  grid-row: span 2;
+}
+.why-us-card:nth-child(2),
+.why-us-card:nth-child(3),
+.why-us-card:nth-child(4) {
+  grid-column: span 2;
+}
+
+.why-us-card img {
+}
+.why-us-card h4 {
+  color: var(--color-primary);
+  font-size: 24px;
+}
+.why-us-card p {
+}
+
 /* Responsive Screens */
 
 @media screen and (max-width: 992px) {
@@ -232,9 +280,23 @@ header {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
+  .why-us-card-group {
+    grid-template-columns: 1fr;
+  }
+  .why-us-card:nth-child(1),
+  .why-us-card:nth-child(2),
+  .why-us-card:nth-child(3),
+  .why-us-card:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }
 
 @media screen and (max-width: 576px) {
+  section {
+    padding-block: 60px;
+  }
+
   .nav-links {
     display: none;
   }
