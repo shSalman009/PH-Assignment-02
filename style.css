@@ -7,6 +7,7 @@
   --bg-primary: #1a0b2e;
   --bg-secondary: #230e3d;
   --bg-card: #35116566;
+  --border-color: #533c72;
   --gradient-color: linear-gradient(
     47.64deg,
     rgba(247, 233, 63, 1),
@@ -75,6 +76,7 @@ footer {
   cursor: pointer;
   background: var(--gradient-color);
   color: var(--color-primary);
+  transition: transform 0.2s ease-in-out;
 }
 
 .btn-outline {
@@ -91,11 +93,24 @@ footer {
   background-color: transparent;
   color: var(--color-secondary);
   border: 1px solid var(--color-secondary);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+.btn-outline:hover {
+  transform: translateY(-2px);
 }
 
 /* Header Styles */
 header {
   background-color: var(--bg-primary);
+}
+header > hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  opacity: 0.2;
 }
 .navbar {
   display: flex;
@@ -153,8 +168,22 @@ header {
   position: relative;
 }
 .banner-circle img {
-  width: 50%;
+  width: 35%;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .banner-badge {
   position: absolute;
   top: 8%;
@@ -329,7 +358,7 @@ header {
 }
 .host-socials li {
   list-style: none;
-  border: 1px solid #533c72;
+  border: 1px solid var(--border-color);
   padding: 10px;
   line-height: 0;
   border-radius: 50%;
@@ -343,7 +372,7 @@ header {
 
 /* Footer Style */
 footer {
-  background: url("./assets/footer-bg.png");
+  background: url("./assets/footer-bg.png"), var(--bg-secondary);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
