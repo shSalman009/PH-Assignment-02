@@ -169,10 +169,7 @@ header > hr {
 }
 .banner-circle img {
   width: 35%;
-  animation-name: rotate;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: rotate 10s linear infinite;
 }
 
 @keyframes rotate {
@@ -193,6 +190,18 @@ header > hr {
   border-radius: 50px;
   text-transform: uppercase;
   color: black;
+  font-weight: 600;
+  font-size: 14px;
+  animation: badge-pulse 2s infinite;
+}
+
+@keyframes badge-pulse {
+  0% {
+    box-shadow: 0 0 0 0px var(--color-secondary);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
 }
 
 .banner-content {
@@ -402,6 +411,9 @@ footer {
   gap: 8px;
   font-size: 16px;
   color: var(--color-light);
+}
+footer p {
+  text-align: center;
 }
 
 /* Responsive Screens */
