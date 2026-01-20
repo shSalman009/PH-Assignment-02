@@ -6,6 +6,7 @@
   --color-light: #ffffffc2;
   --bg-primary: #1a0b2e;
   --bg-secondary: #230e3d;
+  --bg-card: #35116566;
   --gradient-color: linear-gradient(
     47.64deg,
     rgba(247, 233, 63, 1),
@@ -42,9 +43,14 @@ section {
 .section-title {
   font-size: 48px;
   color: var(--color-primary);
-  margin-bottom: 8px;
+  margin-bottom: 32px;
+  text-align: center;
 }
-.section-subtitle {
+.card-title {
+  color: var(--color-primary);
+  font-size: 24px;
+}
+.text-muted {
   font-size: 16px;
   color: var(--color-light);
 }
@@ -166,6 +172,7 @@ header {
 }
 .banner-content h2 {
   font-size: 60px;
+  margin-bottom: 24px;
 }
 .banner-button-group {
   margin-top: 24px;
@@ -224,12 +231,8 @@ header {
 }
 
 .why-us-container {
-  text-align: center;
 }
 
-.why-us-container h2 {
-  margin-bottom: 32px;
-}
 .why-us-card-group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -241,11 +244,10 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  text-align: start;
   gap: 12px;
   padding: 32px;
   border-radius: 40px;
-  background-color: #35116566;
+  background-color: var(--bg-card);
 }
 .why-us-card:nth-child(1) {
   grid-row: span 2;
@@ -258,13 +260,46 @@ header {
 
 .why-us-card img {
 }
-.why-us-card h4 {
-  color: var(--color-primary);
-  font-size: 24px;
-}
+
 .why-us-card p {
 }
 
+/* Featured Styles */
+#featured {
+  background-color: var(--bg-primary);
+}
+.featured-container {
+}
+
+.featured-card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.featured-card {
+  background-color: var(--bg-card);
+  border-radius: 24px;
+  overflow: hidden;
+}
+.featured-card iframe {
+  width: 100%;
+  aspect-ratio: 1/0.6;
+  border: none;
+}
+.featured-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+}
+.featured-card-content h6 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-secondary);
+  font-size: 14px;
+}
 /* Responsive Screens */
 
 @media screen and (max-width: 992px) {
@@ -289,6 +324,9 @@ header {
   .why-us-card:nth-child(4) {
     grid-column: auto;
     grid-row: auto;
+  }
+  .featured-card-group {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
